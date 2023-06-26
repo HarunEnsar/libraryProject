@@ -16,6 +16,7 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT [dbo].[kitapVerileri] ON
+
 INSERT INTO [dbo].[kitapVerileri] ([kitap_no], [yazar], [baslik], [konu], [digerDetaylar], [bekletmeDurmu], [ResimYolu]) VALUES (1012, N'J. K. Rowling ', N'Harry Potter ve Felsefe Taşı', N'Yetim bir çocuğun büyülü dünyayı keşfetmesini ve kendini Voldemort''un kötülüklerine karşı savaşırken bulmasını anlatır.', N'Sihirli ve esrarengiz bir dünyanın kapısını aralamaya ne dersiniz?', 0, N'fg1mlrn2.jtc.jpg')
 
 INSERT INTO [dbo].[kitapVerileri] ([kitap_no], [yazar], [baslik], [konu], [digerDetaylar], [bekletmeDurmu], [ResimYolu]) VALUES (1014, N'Ray Bradbury', N'Fahrenheit 451', N'Baskıcı bir gelecek toplumunun anlatıldığı bu kitap aynı zamanda distopya olarak da sınıflandırılabilir.', N'1951''de ilk defa basılan ünlü distopik bir bilimkurgu romanıdır.', 0, N'lju2mgzl.1c3.jpg')
