@@ -1,7 +1,7 @@
 # libraryProject
  Asp.net Razor library project
 
--------------------------------------------------------------------USAGE----------------------------------------------------------------------------
+---------------------------------------------------------USAGE--------------------------------------------------------------
 1. Open Visual studio package manager console.
 2. write: update-database
 3. Open sql server object explorer;
