@@ -1,0 +1,48 @@
+﻿@page
+@model library.Pages.TerminalModel
+
+
+<div class="text-center">
+    <h4 class="display-4" style="color:aquamarine">Kütüphane Otomasyon Sistemi Kütüphaneci Sayfası</h4>
+    <br />
+    <br />
+</div>
+<div class="Container">
+    <div id="LoginSection">
+        <form method="post">
+            <!-- Username input-->
+            <div class="form-outline mb-4">
+                <label class=" form-label" for="uname">Kullanıcı Adı</label>
+                <input type="text" id="uname" class="form-control" name="UserName" />
+            </div>
+            <!-- Password input-->
+            <div class="form-outline mb-4">
+                <label class=" form-label" for="psw">Şifre</label>
+                <input type="password" id="psw" class="form-control" name="PassWord" />
+            </div>
+            <!--Sumbit Button-->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign İn</button>
+            @if (Model.isError)//hata varsa
+            {
+
+                <p style="color:red"> Kullanıcı adı veya şifre yanlış </p>
+            }
+        </form>
+    </div>
+</div>
+<style>
+    #LoginSection {
+        width: 25em;
+        border: 1px solid darkgrey;
+        border-radius: 5px;
+        padding: 20px;
+        color: gray
+    }
+
+    .Container {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

@@ -1,0 +1,59 @@
+﻿@page
+@model library.Pages.kitaplik.CreateModel
+
+@{
+    ViewData["Title"] = "Oluştur";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<h1>Kitap Oluştur</h1>
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div>
+                <label for="resim">Resim Seçin:</label>
+                <input type="file" id="resim" name="resim">
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="kitapVerileri.yazar" class="control-label"></label>
+                <input asp-for="kitapVerileri.yazar" class="form-control" />
+                <span asp-validation-for="kitapVerileri.yazar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapVerileri.baslik" class="control-label"></label>
+                <input asp-for="kitapVerileri.baslik" class="form-control" />
+                <span asp-validation-for="kitapVerileri.baslik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapVerileri.konu" class="control-label"></label>
+                <input asp-for="kitapVerileri.konu" class="form-control" />
+                <span asp-validation-for="kitapVerileri.konu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapVerileri.digerDetaylar" class="control-label"></label>
+                <input asp-for="kitapVerileri.digerDetaylar" class="form-control" />
+                <span asp-validation-for="kitapVerileri.digerDetaylar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapVerileri.bekletmeDurmu" class="control-label"></label>
+                <input asp-for="kitapVerileri.bekletmeDurmu" class="form-control" />
+                <span asp-validation-for="kitapVerileri.bekletmeDurmu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <br />
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a class="btn btn-secondary" asp-page="./Kitaplik"> <i class="bi bi-collection-fill"></i> &nbsp; Kütüphaneye Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,76 @@
+﻿@page
+@model library.Pages.kitaplik.KitaplikModel
+
+@{
+    ViewData["Title"] = "Kitaplık";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<h1>Terminal</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary" asp-page="Create"> <i class="bi bi-plus-square"></i>&nbsp;&nbsp; Kitap Oluştur</a>
+
+        </div>
+        <div class="col">
+            <a class="btn btn-secondary" asp-page="./Index"><i class="bi bi-collection-fill"></i>&nbsp; Kütüphaneyi Gör</a>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.kitapVerileri[0].yazar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kitapVerileri[0].baslik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kitapVerileri[0].konu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kitapVerileri[0].digerDetaylar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kitapVerileri[0].bekletmeDurmu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.kitapVerileri)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.yazar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.baslik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.konu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.digerDetaylar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bekletmeDurmu)
+                </td>
+
+                <td>
+                    <a class="btn btn-primary" asp-page="./kitapDetay" asp-route-id="@item.kitap_no"><i class="bi bi-info-circle"></i> &nbsp; Detaylar</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.kitap_no"><i class="bi bi-pencil-square"></i>&nbsp; Düzenle</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.kitap_no"><i class="bi bi-dash-square"></i> &nbsp;Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

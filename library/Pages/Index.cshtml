@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+<link rel="stylesheet" href="https: //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<form>
+    <div class="text-center">
+        <div class="row justify-content-center">
+            <h1 class="display-4">Hoş Geldiniz</h1>
+            <img src="lib.jpg"  alt="Resim" class="resim" style="width:400px">
+            <h3>Lütfen Giriş Yönteminizi Seçin</h3>
+        </div>
+        <div class="row justify-content-center">
+
+            <table class="table">
+                <tr>
+                    <td>
+                        <a class="btn btn-primary" asp-page="/alici"><i class="fa-solid fa-users"></i> &nbsp; Alıcı Girişi</a>&nbsp;
+                        <a class="btn btn-primary" asp-page="/Terminal"><i class="fa-solid fa-user"></i> &nbsp;Kütüphaneci Girişi</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+
+
+
+</form>
+
+<style>
+    .resim {
+        border-radius: 30px;
+    }
+</style>

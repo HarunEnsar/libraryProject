@@ -1,0 +1,48 @@
+﻿@page
+@model library.Pages.aliciModel
+@{
+    ViewData["Title"] = "Alıcı Sayfası";
+}
+<div class="text-center">
+    <h1 class="display-4" style="color:aquamarine">Kütüphane Otomasyon Sistemi Alıcı Sayfası</h1>
+    <br />
+    <br />
+</div>
+<div class="Container">
+    <div id="LoginSection">
+        <form method="post">
+            
+            <div class="form-outline mb-4">
+                <label class=" form-label" for="aliciNo">Alıcı No</label>
+                <input type="text" id="aliciNo" class="form-control" name="alici_no" />
+            </div>
+            <!-- Password input-->
+            <div class="form-outline mb-4">
+                <label class=" form-label" for="psw">Şifre</label>
+                <input type="password" id="psw" class="form-control" name="Password" />
+            </div>
+            <!--Sumbit Button-->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Giriş</button>
+            @if (Model.isError)//hata varsa
+            {
+                <p style="color:red; font-weight:bold">Alici Bulunamadı- Alıcı No veya Şifre hatalı olabilir</p>
+            }
+        </form>
+    </div>
+</div>
+<style>
+    #LoginSection {
+        width: 25em;
+        border: 1px solid darkgrey;
+        border-radius: 5px;
+        padding: 20px;
+        color: gray
+    }
+
+    .Container {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
