@@ -3,7 +3,7 @@
 
 ---------------------------------------------------------USAGE--------------------------------------------------------------
 1. Open Visual studio package manager console.
-2. write: update-database
+2. Write: update-database
 3. Open sql server object explorer;
    
 ![Ekran Görüntüsü (15)](https://github.com/HarunEnsar/libraryProject/assets/99835656/3b1e29b7-8626-48e6-bcf7-ac94abc8d482)
