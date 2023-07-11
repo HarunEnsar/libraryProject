@@ -6,28 +6,35 @@ namespace library.Pages
 {
     public class aliciModel : PageModel
     {
-        [BindProperty]//yani heryerden eriþebilirsin
-        public string? alici_no { get; set; }//tboxdan gelen name yani UserName ile property ismi ayný olmalý
+        [BindProperty]//yani heryerden eriÅŸebilirsin
+        public string? alici_no { get; set; }//tboxdan gelen name yani UserName ile property ismi aynÄ± olmalÄ±
         [BindProperty]
-        public string? Password { get; set; }//tboxdan gelen name yani Password ile property ismi ayný olmalý
+        public string? Password { get; set; }//tboxdan gelen name yani Password ile property ismi aynÄ± olmalÄ±
         [BindProperty]
-        public bool isError { get; set; }// hatanýn olup olmamasý 
-        [BindProperty(Name ="kutuphaneciMi")]
-        public bool isKutuphaneci { get; set; }
+        public bool isError { get; set; }// hatanÄ±n olup olmamasÄ± 
+        
         public void OnGet()
         {
 
         }
 
-        public IActionResult OnPost()
+        private readonly library.Data.libraryContext _context;
+        public aliciModel(library.Data.libraryContext context)
+        {
+            _context = context;
+        }
+
+        public kisi kisiler { get; set; }
+
+        public  async Task<IActionResult> OnPost()
         {
             var aliciNo = alici_no;
             var psw=Password;
 
-            var alici=kisiler.kisiListe.FirstOrDefault(x=>x.alici_no==aliciNo && x.Password==psw);
-            if (alici != null)// null deðilse yani deðerler geldiyse
+            var alici=  _context.Kisiler.FirstOrDefault(x=>x.alici_no==aliciNo && x.Password==psw);
+            if (alici != null)// null deÄŸilse yani deÄŸerler geldiyse
             {
-                isKutuphaneci = false;
+                
                 return RedirectToPage("/kitaplik/Index", new { aliciNosu = alici.alici_no });
             }
             else
