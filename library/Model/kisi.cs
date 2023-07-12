@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
@@ -13,7 +13,9 @@ namespace library.Model
         public string? alici_no { get; set; }
         [BindProperty]
         public string? Password { get; set; }
-        
+
+        [Display(Name = "Kitap No")]
+        public int kitap_no { get; set; }
 
     }
 }
