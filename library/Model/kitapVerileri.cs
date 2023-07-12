@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace library.Model
 {
@@ -19,6 +19,9 @@ namespace library.Model
         public int bekletmeDurmu { get; set; }
         [Display(Name = "Resim Yolu")]
         public string? ResimYolu { get; set; }
+
        
+        public int alıcıId { get; set; }
+
     }
 }
