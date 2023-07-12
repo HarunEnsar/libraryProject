@@ -18,6 +18,7 @@ namespace library.Data
 
         public DbSet<library.Model.kitapVerileri> kitapVerileri { get; set; }
         public DbSet<library.Model.kisi> Kisiler { get; set; }
+        public DbSet<library.Model.odunc> Odunc { get; set; }
 
     }
 }
